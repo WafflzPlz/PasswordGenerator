@@ -9,7 +9,6 @@ public class Generator {
     private String pool;
     public Generator() {
         alphabetConfig = new boolean[4];
-        this.mainLoop();
     }
 
     public void mainLoop() {
@@ -32,9 +31,19 @@ public class Generator {
 
         System.out.println("How long do you want your password to be?");
         length = scanner.nextInt();
+
+        String password = generatePassword();
+        System.out.println("Your password is: " + password);
     }
     public String generatePassword() {
-        return null;
+
+        StringBuilder password = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            int index = (int) (Math.random() * pool.length());
+            password.append(pool.charAt(index));
+        }
+
+        return password.toString();
     }
 
     private void setPool(int index, char option) {

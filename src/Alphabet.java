@@ -8,11 +8,21 @@ public class Alphabet {
 
         StringBuilder pool = new StringBuilder();
         for (int i = 0; i < options.length; i++) {
-            switch (i) {
-                case 0 -> pool.append(UPPERCASE);
-                case 1 -> pool.append(LOWERCASE);
-                case 2 -> pool.append(NUMBERS);
-                case 3 -> pool.append(SIGNS);
+            if (options[i]) {
+                switch (i) {
+                    case 0 :
+                        pool.append(UPPERCASE);
+                        break;
+                    case 1 :
+                        pool.append(LOWERCASE);
+                        break;
+                    case 2 :
+                        pool.append(NUMBERS);
+                        break;
+                    case 3 :
+                        pool.append(SIGNS);
+                        break;
+                }
             }
         }
         return pool.toString();
