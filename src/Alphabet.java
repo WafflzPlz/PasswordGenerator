@@ -4,9 +4,10 @@ public class Alphabet {
     private static final String NUMBERS = "0123456789";
     private static final String SIGNS = "!§$%&/()=?+#*@{[]}-";
 
-    private static StringBuilder pool;
+    public static String getAlphabet(boolean upper, boolean lower, boolean num, boolean sign) {
 
-    public static String getPool(boolean upper, boolean lower, boolean num, boolean sign) {
+        StringBuilder pool = new StringBuilder();
+
         if (upper) {
             pool.append(UPPERCASE);
         }
