@@ -4,21 +4,16 @@ public class Alphabet {
     private static final String NUMBERS = "0123456789";
     private static final String SIGNS = "!§$%&/()=?+#*@{[]}-";
 
-    public static String getAlphabet(boolean upper, boolean lower, boolean num, boolean sign) {
+    public static String getAlphabet(boolean[] options) {
 
         StringBuilder pool = new StringBuilder();
-
-        if (upper) {
-            pool.append(UPPERCASE);
-        }
-        if (lower) {
-            pool.append(LOWERCASE);
-        }
-        if (num) {
-            pool.append(NUMBERS);
-        }
-        if (sign) {
-            pool.append(SIGNS);
+        for (int i = 0; i < options.length; i++) {
+            switch (i) {
+                case 0 -> pool.append(UPPERCASE);
+                case 1 -> pool.append(LOWERCASE);
+                case 2 -> pool.append(NUMBERS);
+                case 3 -> pool.append(SIGNS);
+            }
         }
         return pool.toString();
     }
